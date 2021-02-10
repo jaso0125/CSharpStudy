@@ -1,5 +1,5 @@
 ﻿using System;
-using System.IO;
+using System.Collections.Generic;
 
 namespace CSharp
 {
@@ -7,23 +7,18 @@ namespace CSharp
 	{
 		private static void Main(string[] args)
 		{
-			// テキストファイルの読み込み
-			using (var file = new StreamReader(@"C:\C#TIPS\TIPS_31\コーヒーブレイク1.txt"))
+			var list = new List<string>();
+
+			list.Add("い");
+			list.Add("ろ");
+			list.Add("は");
+			list.Add("に");
+
+			foreach (var item in list)
 			{
-				// テキストファイルを一度に読み込む(ReadToEnd)
-				//Console.WriteLine(file.ReadToEnd());
-				//Console.Read();
-
-				// テキストファイルを1行ずつ読み込む(ReadLine)
-				//Console.WriteLine(file.ReadLine());
-
-				// テキストファイルを1行ずつ読み込む、最後まで読み込む(ReadLine))
-				while (!file.EndOfStream) // 末尾かどうかを判定
-				{
-					Console.WriteLine(file.ReadLine());
-				}
-				Console.Read();
+				Console.WriteLine(item);
 			}
+			Console.Read();
 		}
 	}
 }
